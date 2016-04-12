@@ -10,9 +10,11 @@ if (Meteor.isClient) {
         event.preventDefault();
         var emailVar = event.target.registerEmail.value;
         var passwordVar = event.target.registerPassword.value;
+        var doctorVar = event.target.isDoctor.value;
         Accounts.createUser({
             email: emailVar,
-            password: passwordVar
+            password: passwordVar,
+            doctor: doctorVar
         });
     }
   });

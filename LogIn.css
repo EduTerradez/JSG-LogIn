@@ -1,1 +1,37 @@
-/* CSS declarations go here */
+html,body,.container
+{
+    height:100%;
+}
+
+.container
+{
+    display:table;
+    width: 100%;
+    padding-top: 50px;
+
+}
+
+#login-page {
+	margin: 0px;
+	width: 100%;
+	overflow: hidden;
+    background-size: cover;
+    background-position: center;
+	background-image: url("img/fondo.jpg");
+}
+
+#logo {
+	height: 10em;
+	width: 25em;
+	background-size: cover;
+    background-position: center;
+	background-image: url("img/logotipo.png");
+	margin: auto;
+    padding: 10px;
+}
+
+
+#login {
+	margin: auto;
+	padding: 10px;
+}

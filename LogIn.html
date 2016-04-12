@@ -1,13 +1,39 @@
 <head>
     <title>JSG LogIn</title>
+    <!-- Latest compiled and minified CSS -->
+   <!--  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+ -->
+    <!-- Optional theme -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+ -->
+    <!-- Latest compiled and minified JavaScript -->
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+ -->
+    <!-- Latest compiled and minified jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 </head>
+
 <body>
-    {{#if currentUser}}
-        {{> dashboard}}
-    {{else}}
-        {{> register}}
-        {{> login}}
-    {{/if}}
+    <div class="container" id="login-page">
+        <div class="row">
+            <div class="col-md-6">
+                <div id="logo">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div id="login">
+                    {{#if currentUser}}
+                        {{> dashboard}}
+                    {{else}}
+                        {{> register}}
+                        {{> login}}
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+        
+
+    </div>
 </body>
 
 <template name="dashboard">
@@ -16,17 +42,35 @@
 </template>
 
 <template name="register">
-    <form>
-        <input type="email" name="registerEmail">
-        <input type="password" name="registerPassword">
-        <input type="submit" value="Register">
+    <form class="form-inline">
+        <div class="form-group">
+            <label class="sr-only" for="exampleInputEmail3">Email address</label>
+            <input type="email" name="registerEmail" class="form-control" id="exampleInputEmail3" placeholder="Email">
+        </div>
+        <div class="form-group">
+            <label class="sr-only" for="exampleInputPassword3">Password</label>
+            <input type="password" name="registerPassword" class="form-control" id="exampleInputPassword3" placeholder="Password">
+        </div>
+
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" name="isDoctor"> ¿Eres doctor?
+            </label>
+        </div>
+        <input type="submit" class="btn btn-default" value="Register">
     </form>
 </template>
 
 <template name="login">
-    <form>
-        <input type="email" name="loginEmail">
-        <input type="password" name="loginPassword">
-        <input type="submit" value="Login">
+    <form class="form-inline">
+        <div class="form-group">
+            <label class="sr-only" for="exampleInputEmail3">Email address</label>
+            <input type="email" name="loginEmail" class="form-control" id="exampleInputEmail3" placeholder="Email">
+        </div>
+        <div class="form-group">
+            <label class="sr-only" for="exampleInputPassword3">Password</label>
+            <input type="password" name="loginPassword" class="form-control" id="exampleInputPassword3" placeholder="Password">
+        </div>
+        <input type="submit" class="btn btn-default" value="Login">
     </form>
 </template>	
